@@ -28,16 +28,16 @@ pip install repo-translate
 
 ```bash
 # 日本語に翻訳
-repo-translate karpathy/nanoGPT --lang ja
+repo-translate translate karpathy/nanoGPT --lang ja
 
 # 中国語に翻訳（デフォルト）
-repo-translate karpathy/nanoGPT
+repo-translate translate karpathy/nanoGPT
 
 # Zhipu AIを使用
-repo-translate karpathy/nanoGPT --provider zhipu --api-key your-api-key
+repo-translate translate karpathy/nanoGPT --provider zhipu --api-key your-api-key
 
 # DeepSeekを使用
-repo-translate karpathy/nanoGPT --provider deepseek --api-key sk-xxx
+repo-translate translate karpathy/nanoGPT --provider deepseek --api-key sk-xxx
 ```
 
 ## 使用方法
@@ -46,38 +46,38 @@ repo-translate karpathy/nanoGPT --provider deepseek --api-key sk-xxx
 
 ```bash
 # リポジトリの短縮形
-repo-translate owner/repo
+repo-translate translate owner/repo
 
 # 完全なURL
-repo-translate https://github.com/owner/repo
+repo-translate translate https://github.com/owner/repo
 
 # ターゲット言語を指定
-repo-translate owner/repo --lang ko
+repo-translate translate owner/repo --lang ko
 ```
 
 ### LLMプロバイダー
 
 ```bash
 # OpenAI（デフォルト）
-repo-translate owner/repo --provider openai --api-key sk-xxx
+repo-translate translate owner/repo --provider openai --api-key sk-xxx
 
 # DeepSeek
-repo-translate owner/repo --provider deepseek --api-key sk-xxx
+repo-translate translate owner/repo --provider deepseek --api-key sk-xxx
 
 # Zhipu AI
-repo-translate owner/repo --provider zhipu --api-key xxx.xxx
+repo-translate translate owner/repo --provider zhipu --api-key xxx.xxx
 
 # Moonshot
-repo-translate owner/repo --provider moonshot --api-key sk-xxx
+repo-translate translate owner/repo --provider moonshot --api-key sk-xxx
 
 # Qwen
-repo-translate owner/repo --provider qwen --api-key sk-xxx
+repo-translate translate owner/repo --provider qwen --api-key sk-xxx
 
 # Ollama（ローカル）
-repo-translate owner/repo --provider ollama --model llama3
+repo-translate translate owner/repo --provider ollama --model llama3
 
 # カスタムOpenAI互換API
-repo-translate owner/repo --provider custom --base-url https://api.example.com/v1 --api-key xxx
+repo-translate translate owner/repo --provider custom --base-url https://api.example.com/v1 --api-key xxx
 ```
 
 ### 設定
@@ -109,6 +109,36 @@ repo-translate config init
 4. 環境変数
 5. デフォルト値
 
+### CLI コマンド
+
+```bash
+# 設定ファイルを初期化
+repo-translate config init
+
+# グローバルプロバイダー設定を指定
+repo-translate config set zhipu --api-key xxx --model glm-4-flash
+
+# 現在の設定を表示
+repo-translate config show
+
+# サポートされているプロバイダーを一覧表示
+repo-translate providers
+
+# サポートされている言語を一覧表示
+repo-translate languages
+
+# ドライラン（プレビューのみ、変更なし）
+repo-translate translate owner/repo --dry-run
+```
+
+### 環境変数
+
+```bash
+export REPO_TRANSLATE_API_KEY=your-api-key
+export REPO_TRANSLATE_PROVIDER=zhipu
+export REPO_TRANSLATE_MODEL=glm-4-flash
+repo-translate translate owner/repo
+```
 ## サポートされているプロバイダー
 
 | プロバイダー | デフォルトモデル | ベースURL |

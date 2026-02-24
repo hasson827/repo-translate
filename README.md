@@ -28,16 +28,16 @@ pip install repo-translate
 
 ```bash
 # Translate to Chinese (default)
-repo-translate karpathy/nanoGPT
+repo-translate translate karpathy/nanoGPT
 
 # Translate to Japanese
-repo-translate karpathy/nanoGPT --lang ja
+repo-translate translate karpathy/nanoGPT --lang ja
 
 # Using Zhipu AI (recommended for Chinese users)
-repo-translate karpathy/nanoGPT --provider zhipu --api-key your-api-key
+repo-translate translate karpathy/nanoGPT --provider zhipu --api-key your-api-key
 
 # Using DeepSeek
-repo-translate karpathy/nanoGPT --provider deepseek --api-key sk-xxx
+repo-translate translate karpathy/nanoGPT --provider deepseek --api-key sk-xxx
 ```
 
 ## Usage
@@ -46,38 +46,38 @@ repo-translate karpathy/nanoGPT --provider deepseek --api-key sk-xxx
 
 ```bash
 # Repository shorthand
-repo-translate owner/repo
+repo-translate translate owner/repo
 
 # Full URL
-repo-translate https://github.com/owner/repo
+repo-translate translate https://github.com/owner/repo
 
 # Specify target language
-repo-translate owner/repo --lang ko
+repo-translate translate owner/repo --lang ko
 ```
 
 ### LLM Providers
 
 ```bash
 # OpenAI (default)
-repo-translate owner/repo --provider openai --api-key sk-xxx
+repo-translate translate owner/repo --provider openai --api-key sk-xxx
 
 # DeepSeek
-repo-translate owner/repo --provider deepseek --api-key sk-xxx
+repo-translate translate owner/repo --provider deepseek --api-key sk-xxx
 
 # Zhipu AI (智谱)
-repo-translate owner/repo --provider zhipu --api-key xxx.xxx
+repo-translate translate owner/repo --provider zhipu --api-key xxx.xxx
 
 # Moonshot (月之暗面)
-repo-translate owner/repo --provider moonshot --api-key sk-xxx
+repo-translate translate owner/repo --provider moonshot --api-key sk-xxx
 
 # Qwen (通义千问)
-repo-translate owner/repo --provider qwen --api-key sk-xxx
+repo-translate translate owner/repo --provider qwen --api-key sk-xxx
 
 # Ollama (local)
-repo-translate owner/repo --provider ollama --model llama3
+repo-translate translate owner/repo --provider ollama --model llama3
 
 # Custom OpenAI-compatible API
-repo-translate owner/repo --provider custom --base-url https://api.example.com/v1 --api-key xxx
+repo-translate translate owner/repo --provider custom --base-url https://api.example.com/v1 --api-key xxx
 ```
 
 ### Configuration
@@ -128,7 +128,7 @@ repo-translate providers
 repo-translate languages
 
 # Dry run (preview without changes)
-repo-translate owner/repo --dry-run
+repo-translate translate owner/repo --dry-run
 ```
 
 ### Environment Variables
@@ -137,7 +137,7 @@ repo-translate owner/repo --dry-run
 export REPO_TRANSLATE_API_KEY=your-api-key
 export REPO_TRANSLATE_PROVIDER=zhipu
 export REPO_TRANSLATE_MODEL=glm-4-flash
-repo-translate owner/repo
+repo-translate translate owner/repo
 ```
 
 ## Supported Providers

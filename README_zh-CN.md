@@ -28,16 +28,16 @@ pip install repo-translate
 
 ```bash
 # 翻译成中文（默认）
-repo-translate karpathy/nanoGPT
+repo-translate translate karpathy/nanoGPT
 
 # 翻译成日语
-repo-translate karpathy/nanoGPT --lang ja
+repo-translate translate karpathy/nanoGPT --lang ja
 
 # 使用智谱 AI（推荐中国用户使用）
-repo-translate karpathy/nanoGPT --provider zhipu --api-key your-api-key
+repo-translate translate karpathy/nanoGPT --provider zhipu --api-key your-api-key
 
 # 使用 DeepSeek
-repo-translate karpathy/nanoGPT --provider deepseek --api-key sk-xxx
+repo-translate translate karpathy/nanoGPT --provider deepseek --api-key sk-xxx
 ```
 
 ## 使用方法
@@ -46,38 +46,38 @@ repo-translate karpathy/nanoGPT --provider deepseek --api-key sk-xxx
 
 ```bash
 # 仓库简写
-repo-translate owner/repo
+repo-translate translate owner/repo
 
 # 完整 URL
-repo-translate https://github.com/owner/repo
+repo-translate translate https://github.com/owner/repo
 
 # 指定目标语言
-repo-translate owner/repo --lang ko
+repo-translate translate owner/repo --lang ko
 ```
 
 ### LLM 提供商
 
 ```bash
 # OpenAI（默认）
-repo-translate owner/repo --provider openai --api-key sk-xxx
+repo-translate translate owner/repo --provider openai --api-key sk-xxx
 
 # DeepSeek
-repo-translate owner/repo --provider deepseek --api-key sk-xxx
+repo-translate translate owner/repo --provider deepseek --api-key sk-xxx
 
 # 智谱 AI
-repo-translate owner/repo --provider zhipu --api-key xxx.xxx
+repo-translate translate owner/repo --provider zhipu --api-key xxx.xxx
 
 # Moonshot（月之暗面）
-repo-translate owner/repo --provider moonshot --api-key sk-xxx
+repo-translate translate owner/repo --provider moonshot --api-key sk-xxx
 
 # 通义千问
-repo-translate owner/repo --provider qwen --api-key sk-xxx
+repo-translate translate owner/repo --provider qwen --api-key sk-xxx
 
 # Ollama（本地）
-repo-translate owner/repo --provider ollama --model llama3
+repo-translate translate owner/repo --provider ollama --model llama3
 
 # 自定义 OpenAI 兼容 API
-repo-translate owner/repo --provider custom --base-url https://api.example.com/v1 --api-key xxx
+repo-translate translate owner/repo --provider custom --base-url https://api.example.com/v1 --api-key xxx
 ```
 
 ### 配置
@@ -128,7 +128,7 @@ repo-translate providers
 repo-translate languages
 
 # 试运行（预览不修改）
-repo-translate owner/repo --dry-run
+repo-translate translate owner/repo --dry-run
 ```
 
 ### 环境变量
@@ -137,7 +137,7 @@ repo-translate owner/repo --dry-run
 export REPO_TRANSLATE_API_KEY=your-api-key
 export REPO_TRANSLATE_PROVIDER=zhipu
 export REPO_TRANSLATE_MODEL=glm-4-flash
-repo-translate owner/repo
+repo-translate translate owner/repo
 ```
 
 ## 支持的提供商
